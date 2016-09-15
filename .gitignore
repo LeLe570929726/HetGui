@@ -27,9 +27,5 @@
 *.out
 *.app
 
-# Dev path and files
-Dev/
-*.user
-
 # Build path
 Build/
