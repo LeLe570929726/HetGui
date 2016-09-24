@@ -244,12 +244,93 @@ HtString &HtString::append(const char *text, int size) {
 //            text.
 // @Parameter: text - The text that you want to add the back
 //                    of the source text.
-//             postion - The start of the text.
+//             position - The start of the text.
 //             number - The length of the text.
 // ----------------------------------------------------------------------------------------
 HtString &HtString::append(const HtString &text, int position, int number) {
 	this->string.append(text.string, position, number);
 	return *this;
+}
+
+// ----------------------------------------------------------------------------------------
+// @Description: Append some text on the back of the source
+//            text.
+// @Parameter: position - The position that you want to insert.
+//             text - The text that you want to insert.
+// ----------------------------------------------------------------------------------------
+HtString &HtString::insert(int position, const char *text) {
+	this->string.insert(position, text);
+	return *this;
+}
+
+// ----------------------------------------------------------------------------------------
+// @Description: Append some text on the back of the source
+//            text.
+// @Parameter: position - The position that you want to insert.
+//             text - The text that you want to insert.
+// ----------------------------------------------------------------------------------------
+HtString &HtString::insert(int position, const HtString &text) {
+	this->string.insert(position, text.string);
+	return *this;
+}
+
+// ----------------------------------------------------------------------------------------
+// @Description: Append some text on the back of the source
+//            text.
+// @Parameter: position - The position that you want to insert.
+//             text - The text that you want to insert.
+//             size - The size of the text.
+// ----------------------------------------------------------------------------------------
+HtString &HtString::insert(int position, const char *text, int size) {
+	this->string.insert(position, text, size);
+	return *this;
+}
+
+// ----------------------------------------------------------------------------------------
+// @Description: Append some text on the back of the source
+//            text.
+// @Parameter: position - The position that you want to insert.
+//             text - The text that you want to insert.
+//             start - The start of the adding text.
+//             end - The end of the adding text.
+// ----------------------------------------------------------------------------------------
+HtString &HtString::insert(int position, const HtString &text, int start, int end) {
+	this->string.insert(position, text.string, start, end);
+	return *this;
+}
+
+// ----------------------------------------------------------------------------------------
+// @Description: Append some text on the back of the source
+//            text.
+// @Parameter: position - The index that you want to insert.
+//             size - The number of the text.
+//             text - The text.
+// ----------------------------------------------------------------------------------------
+HtString &HtString::insert(int position, int size, char text) {
+	this->string.insert(position, size, text);
+	return *this;
+}
+
+// ----------------------------------------------------------------------------------------
+// @Description: Append some text on the back of the source
+//            text.
+// @Parameter: position - The iteartor that you want to insert.
+//             size - The number of the text.
+//             text - The text.
+// ----------------------------------------------------------------------------------------
+void HtString::insert(HtStringIterator position, int size, char text) {
+	this->string.insert(position.stdIterator(), size, text);
+}
+
+// ----------------------------------------------------------------------------------------
+// @Description: Append some text on the back of the source
+//            text.
+// @Parameter: position - The index that you want to insert.
+//             text - The text.
+// ----------------------------------------------------------------------------------------
+HtStringIterator HtString::insert(HtStringIterator position, char text) {
+	HtStringIterator tempIterator = this->string.insert(position.stdIterator(), text);
+	return tempIterator;
 }
 
 // ----------------------------------------------------------------------------------------
@@ -313,7 +394,7 @@ HtString &HtString::assign(const char *text, int number) {
 // ----------------------------------------------------------------------------------------
 // @Description: Assign content to string.
 // @Parameter: text - Copies text.
-//             postion - Copies the start of text.
+//             position - Copies the start of text.
 //             end - Copies the end of text.
 // ----------------------------------------------------------------------------------------
 HtString &HtString::assign(const HtString &text, int position, int end) {
@@ -452,11 +533,11 @@ HtStringIterator HtString::remove(HtStringIterator position) {
 
 // ----------------------------------------------------------------------------------------
 // @Descriptionion: Remove a part of text.
-// @Parameter: position - The start text's iterator.
+// @Parameter: start - The start text's iterator.
 //             end - The end text's iterator.
 // ----------------------------------------------------------------------------------------
-HtStringIterator HtString::remove(HtStringIterator position, HtStringIterator end) {
-	std::string::iterator tempIterator = this->string.erase(position.stdIterator(), end.stdIterator());
+HtStringIterator HtString::remove(HtStringIterator start, HtStringIterator end) {
+	std::string::iterator tempIterator = this->string.erase(start.stdIterator(), end.stdIterator());
 	return tempIterator;
 }
 

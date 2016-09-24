@@ -11,136 +11,136 @@
 #include <string>
 
 // ----------------------------------------------------------------------------------------
-// @Descriptionion: HtString's iterator
+// @Description: HtString's iterator
 // ----------------------------------------------------------------------------------------
 typedef  HtIterator<std::string::iterator> HtStringIterator;
 
 // ----------------------------------------------------------------------------------------
-// @Descriptionion: Use this class to store text. It's based on
+// @Description: Use this class to store text. It's based on
 //               STL's string.
 // ----------------------------------------------------------------------------------------
 class HETGUI_CLASS HtString {
 public:
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: HtString's constructor.
+	// @Description: HtString's constructor.
 	// ----------------------------------------------------------------------------------------
 	HtString();
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: HtString's constructor.
+	// @Description: HtString's constructor.
 	// @Parameter: text - Initialization text.
 	// ----------------------------------------------------------------------------------------
 	HtString(const char *text);
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: HtString's constructor.
+	// @Description: HtString's constructor.
 	// @Parameter: size - The size of text that you will add.
 	//             text - The text that you will add.
 	// ----------------------------------------------------------------------------------------
 	HtString(int size, char text);
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: HtString's constructor.
+	// @Description: HtString's constructor.
 	// @Parameter: other - The other HtString object.
 	// ----------------------------------------------------------------------------------------
 	HtString(const HtString &other);
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: HtString's constructor.
+	// @Description: HtString's constructor.
 	// @Parameter: other - The other HtString object.
 	// ----------------------------------------------------------------------------------------
 	HtString(HtString &&other);
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: HtString's constructor.
+	// @Description: HtString's constructor.
   // ----------------------------------------------------------------------------------------
   ~HtString();
 
 public:
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Compare this HtString object and input text.
+	// @Description: Compare this HtString object and input text.
   // @Parameter: text - Compare with this HtString object and
   //                    the text.
 	// ----------------------------------------------------------------------------------------
   bool operator!=(const char *text);
   // ----------------------------------------------------------------------------------------
-  // @Descriptionion: Compare this HtString object and input text.
+  // @Description: Compare this HtString object and input text.
   // @Parameter: text - Compare with this HtString object and
   //                    the text.
   // ----------------------------------------------------------------------------------------
   bool operator!=(const HtString &text);
   // ----------------------------------------------------------------------------------------
-  // @Descriptionion: Add the new text into the source text.
+  // @Description: Add the new text into the source text.
   // @Parameter: text - The text that you want to add in.
   // ----------------------------------------------------------------------------------------
   HtString &operator+=(const char *text);
   // ----------------------------------------------------------------------------------------
-  // @Descriptionion: Add the new text into the source text.
+  // @Description: Add the new text into the source text.
   // @Parameter: text - The text that you want to add in.
   // ----------------------------------------------------------------------------------------
   HtString &operator+=(const HtString &text);
   // ----------------------------------------------------------------------------------------
-  // @Descriptionion: Compare this HtString object and input text.
+  // @Description: Compare this HtString object and input text.
   // @Parameter: text - The text that you want to compare.
   // ----------------------------------------------------------------------------------------
   bool operator<(const char *text);
   // ----------------------------------------------------------------------------------------
-  // @Descriptionion: Compare this HtString object and input text.
+  // @Description: Compare this HtString object and input text.
   // @Parameter: text - The text that you want to compare.
   // ----------------------------------------------------------------------------------------
   bool operator<(const HtString &text);
   // ----------------------------------------------------------------------------------------
-  // @Descriptionion: Compare this HtString object and input text.
+  // @Description: Compare this HtString object and input text.
   // @Parameter: text - The text that you want to compare.
   // ----------------------------------------------------------------------------------------
   bool operator<=(const char *text);
   // ----------------------------------------------------------------------------------------
-  // @Descriptionion: Compare this HtString object and input text.
+  // @Description: Compare this HtString object and input text.
   // @Parameter: text - The text that you want to compare.
   // ----------------------------------------------------------------------------------------
   bool operator<=(const HtString &text);
   // ----------------------------------------------------------------------------------------
-  // @Descriptionion: Set the source text to the new text.
+  // @Description: Set the source text to the new text.
   // @Parameter: other - The other text or HtString object.
   // ----------------------------------------------------------------------------------------
   HtString &operator=(const char *other);
   // ----------------------------------------------------------------------------------------
-  // @Descriptionion: Set the source text to the new text.
+  // @Description: Set the source text to the new text.
   // @Parameter: other - The other text or HtString object.
   // ----------------------------------------------------------------------------------------
   HtString &operator=(const HtString &other);
   // ----------------------------------------------------------------------------------------
-  // @Descriptionion: Set the source text to the new text.
+  // @Description: Set the source text to the new text.
   // @Parameter: other - The other text or HtString object.
   // ----------------------------------------------------------------------------------------
   HtString &operator=(HtString &&other);
   // ----------------------------------------------------------------------------------------
-  // @Descriptionion: Compare this HtString object and input text.
+  // @Description: Compare this HtString object and input text.
   // @Parameter: text - The text that you want to compare.
   // ----------------------------------------------------------------------------------------
   bool operator==(const char *text);
   // ----------------------------------------------------------------------------------------
-  // @Descriptionion: Compare this HtString object and input text.
+  // @Description: Compare this HtString object and input text.
   // @Parameter: text - The text that you want to compare.
   // ----------------------------------------------------------------------------------------
   bool operator==(const HtString &text);
   // ----------------------------------------------------------------------------------------
-  // @Descriptionion: Compare this HtString object and input text.
+  // @Description: Compare this HtString object and input text.
   // @Parameter: text - The text that you want to compare.
   // ----------------------------------------------------------------------------------------
   bool operator>(const char *text);
   // ----------------------------------------------------------------------------------------
-  // @Descriptionion: Compare this HtString object and input text.
+  // @Description: Compare this HtString object and input text.
   // @Parameter: text - The text that you want to compare.
   // ----------------------------------------------------------------------------------------
   bool operator>(const HtString &text);
   // ----------------------------------------------------------------------------------------
-  // @Descriptionion: Compare this HtString object and input text.
+  // @Description: Compare this HtString object and input text.
   // @Parameter: text - The text that you want to compare.
   // ----------------------------------------------------------------------------------------
   bool operator>=(const char *text);
   // ----------------------------------------------------------------------------------------
-  // @Descriptionion: Compare this HtString object and input text.
+  // @Description: Compare this HtString object and input text.
   // @Parameter: text - The text that you want to compare.
   // ----------------------------------------------------------------------------------------
   bool operator>=(const HtString &text);
   // ----------------------------------------------------------------------------------------
-  // @Descriptionion: Get a single text by index.
+  // @Description: Get a single text by index.
   // @Parameter: index - The index of the text.
   // ----------------------------------------------------------------------------------------
   const char operator[](int index);
@@ -173,10 +173,57 @@ public:
 	//            text.
 	// @Parameter: text - The text that you want to add the back
 	//                    of the source text.
-	//             postion - The start of the text.
+	//             position - The start of the text.
 	//             number - The length of the text.
 	// ----------------------------------------------------------------------------------------
 	HtString &append(const HtString &text, int position, int number);
+	// ----------------------------------------------------------------------------------------
+	// @Description: Insert some text in the source text.
+	// @Parameter: position - The position that you want to insert.
+	//             text - The text that you want to insert.
+	// ----------------------------------------------------------------------------------------
+	HtString &insert(int position, const char *text);
+	// ----------------------------------------------------------------------------------------
+	// @Description: Insert some text in the source text.
+	// @Parameter: position - The position that you want to insert.
+	//             text - The text that you want to insert.
+	// ----------------------------------------------------------------------------------------
+	HtString &insert(int position, const HtString &text);
+	// ----------------------------------------------------------------------------------------
+	// @Description: Insert some text in the source text.
+	// @Parameter: position - The position that you want to insert.
+	//             text - The text that you want to insert.
+	//             size - The size of the text.
+	// ----------------------------------------------------------------------------------------
+	HtString &insert(int position, const char *text, int size);
+	// ----------------------------------------------------------------------------------------
+	// @Description: Insert some text in the source text.
+	// @Parameter: position - The position that you want to insert.
+	//             text - The text that you want to insert.
+	//             start - The start of the adding text.
+	//             end - The end of the adding text.
+	// ----------------------------------------------------------------------------------------
+	HtString &insert(int position, const HtString &text, int start, int end);
+	// ----------------------------------------------------------------------------------------
+	// @Description: Insert some text in the source text.
+	// @Parameter: position - The index that you want to insert.
+	//             size - The number of the text.
+	//             text - The text.
+	// ----------------------------------------------------------------------------------------
+	HtString &insert(int position, int size, char text);
+	// ----------------------------------------------------------------------------------------
+	// @Description: Insert some text in the source text.
+	// @Parameter: position - The iteartor that you want to insert.
+	//             size - The number of the text.
+	//             text - The text.
+	// ----------------------------------------------------------------------------------------
+	void insert(HtStringIterator position, int size, char text);
+	// ----------------------------------------------------------------------------------------
+	// @Description: Insert some text in the source text.
+	// @Parameter: start - The index that you want to insert.
+	//             text - The text.
+	// ----------------------------------------------------------------------------------------
+	HtStringIterator insert(HtStringIterator start, char text);
 	// ----------------------------------------------------------------------------------------
 	// @Description: Request the store memory.
 	// @Parameter: size - The length of the memory.
@@ -191,7 +238,7 @@ public:
 	// ----------------------------------------------------------------------------------------
 	char &front();
   // ----------------------------------------------------------------------------------------
-  // @Descriptionion: Get a single text by index.
+  // @Description: Get a single text by index.
   // @Parameter: index - The index of the text.
   // ----------------------------------------------------------------------------------------
   const char at(int index);
@@ -216,7 +263,7 @@ HtString &assign(const char *text, int number);
 // ----------------------------------------------------------------------------------------
 // @Description: Assign content to string.
 // @Parameter: text - Copies text.
-//             postion - Copies the start of text.
+//             position - Copies the start of text.
 //             end - Copies the end of text.
 // ----------------------------------------------------------------------------------------
 HtString &assign(const HtString &text, int position, int end);
@@ -229,87 +276,87 @@ HtString &assign(char text, int number);
 
 public:
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Get the begin iterator.
+	// @Description: Get the begin iterator.
 	// ----------------------------------------------------------------------------------------
 	HtStringIterator begin();
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Get the end iterator.
+	// @Description: Get the end iterator.
 	// ----------------------------------------------------------------------------------------
 	HtStringIterator end();
 
 public:
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Get the length of the string.
+	// @Description: Get the length of the string.
 	// ----------------------------------------------------------------------------------------
 	int length();
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Get the size of the string.
+	// @Description: Get the size of the string.
 	// ----------------------------------------------------------------------------------------
 	int size();
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Get the max size of the string.
+	// @Description: Get the max size of the string.
 	// ----------------------------------------------------------------------------------------
 	int maxSize();
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Resize the string.
+	// @Description: Resize the string.
 	// @Parameter: size - The new size.
 	// ----------------------------------------------------------------------------------------
 	void resize(int size);
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Resize the string.
+	// @Description: Resize the string.
 	// @Parameter: size - The new size.
 	//             text - Use this text to fill the rest part of the string.
 	// ----------------------------------------------------------------------------------------
 	void resize(int size, char text);
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: To determine whether the string is empty.
+	// @Description: To determine whether the string is empty.
 	// ----------------------------------------------------------------------------------------
 	int empty();
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Get the capacity of the string.
+	// @Description: Get the capacity of the string.
 	// ----------------------------------------------------------------------------------------
 	int capacity();
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Get the std string object.
+	// @Description: Get the std string object.
 	// ----------------------------------------------------------------------------------------
 	std::string stdString();
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Get the c-style text.
+	// @Description: Get the c-style text.
 	// ----------------------------------------------------------------------------------------
 	const char *constData();
 
 public:
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Push the text behind the source string.
+	// @Description: Push the text behind the source string.
 	// @Parameter: text - The text that you will push it behind
 	//                    the source string.
 	// ----------------------------------------------------------------------------------------
 	void pushBack(const char *text);
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Push the text behind the source string.
+	// @Description: Push the text behind the source string.
 	// @Parameter: text - The text that you will push it behind
 	//                    the source string.
 	// ----------------------------------------------------------------------------------------
 	void pushBack(const HtString &text);
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Remove a part of text.
+	// @Description: Remove a part of text.
 	// @Parameter: position - The start index.
 	//             end - The end index.
 	// ----------------------------------------------------------------------------------------
 	HtString &remove(int position, int end);
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Remove a part of text.
+	// @Description: Remove a part of text.
 	// @Parameter: position - The text's iterator.
 	// ----------------------------------------------------------------------------------------
 	HtStringIterator remove(HtStringIterator position);
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Remove a part of text.
-	// @Parameter: position - The start text's iterator.
+	// @Description: Remove a part of text.
+	// @Parameter: start - The start text's iterator.
 	//             end - The end text's iterator.
 	// ----------------------------------------------------------------------------------------
-	HtStringIterator remove(HtStringIterator position, HtStringIterator end);
+	HtStringIterator remove(HtStringIterator start, HtStringIterator end);
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Replace a part of text.
+	// @Description: Replace a part of text.
 	// @Parameter: position - The start text's index.
 	//             number - The number of the text that you want to
 	//                      replace.
@@ -317,7 +364,7 @@ public:
 	// ----------------------------------------------------------------------------------------
 	HtString &replace(int position, int number, const char *text);
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Replace a part of text.
+	// @Description: Replace a part of text.
 	// @Parameter: position - The start text's index.
 	//             number - The number of the text that you want to
 	//                      replace.
@@ -325,7 +372,7 @@ public:
 	// ----------------------------------------------------------------------------------------
 	HtString &replace(int position, int number, const HtString &text);
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Replace a part of text.
+	// @Description: Replace a part of text.
 	// @Parameter: positionSource - The source text's start index.
 	//             numberSource - The number of the source text that
 	//                      you want to replace.
@@ -335,7 +382,7 @@ public:
 	// ----------------------------------------------------------------------------------------
 	HtString &replace(int positionSource, int numberSource, const char *text, int numberAdd);
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Replace a part of text.
+	// @Description: Replace a part of text.
 	// @Parameter: positionSource - The source text's start index.
 	//             numberSource - The number of the source text that
 	//                      you want to replace.
@@ -346,7 +393,7 @@ public:
 	// ----------------------------------------------------------------------------------------
 	HtString &replace(int positionSource, int numberSource, const HtString &text, int positionAdd, int numberAdd);
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Replace a part of text.
+	// @Description: Replace a part of text.
 	// @Parameter: position - The start text's index.
 	//             number - The number of the text that you want to
 	//                      replace.
@@ -355,21 +402,21 @@ public:
 	// ----------------------------------------------------------------------------------------
 	HtString &replace(int position, int number, int count, char text);
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Replace a part of text.
+	// @Description: Replace a part of text.
 	// @Parameter: start - The start iterator.
 	//             end - The end iterator.
 	//             text - The text you want to add in.
 	// ----------------------------------------------------------------------------------------
 	HtString &replace(HtStringIterator start, HtStringIterator end, const char *text);
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Replace a part of text.
+	// @Description: Replace a part of text.
 	// @Parameter: start - The start iterator.
 	//             end - The end iterator.
 	//             text - The text you want to add in.
 	// ----------------------------------------------------------------------------------------
 	HtString &replace(HtStringIterator start, HtStringIterator end, const HtString &text);
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Replace a part of text.
+	// @Description: Replace a part of text.
 	// @Parameter: startSource - The source's string start iterator.
 	//             endSource - The source's string end iterator.
 	//             startAdd - The add's string start iterator.
@@ -377,17 +424,23 @@ public:
 	// ----------------------------------------------------------------------------------------
 	HtString &replace(HtStringIterator startSource, HtStringIterator endSource, HtStringIterator startAdd, HtStringIterator endAdd);
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Replace a part of text.
+	// @Description: Replace a part of text.
 	// @Parameter: start - The start iterator.
 	//             end - The end iterator.
 	//             text - The text that you want to add in.
 	//             count - The size of the add's text.
 	// ----------------------------------------------------------------------------------------
 	HtString &replace(HtStringIterator start, HtStringIterator end, const char *text, int count);
+	// ----------------------------------------------------------------------------------------
+	// @Description: Get the part of the text.
+	// @Parameter: position - The start index of  the text.
+	//             end - The end index of the text.
+	// ----------------------------------------------------------------------------------------
+	HtString subText(int position, int end);
 
 public:
 	// ----------------------------------------------------------------------------------------
-	// @Descriptionion: Clear the string.
+	// @Description: Clear the string.
 	// ----------------------------------------------------------------------------------------
 	void clear();
 

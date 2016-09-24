@@ -127,6 +127,22 @@ public:
 	bool operator>=(const HtIterator<T> &other) {
 		return this->iterator >= other.iterator;
 	}
+	// ----------------------------------------------------------------------------------------
+	// @Description: Let this iterator add a size.
+	// @Parameter: size - The size that you want to add.
+	// ----------------------------------------------------------------------------------------
+	HtIterator<T> &operator+=(int size) {
+		this->iterator += size;
+		return *this;
+	}
+	// ----------------------------------------------------------------------------------------
+	// @Description: Let this iterator reduce a size.
+	// @Parameter: size - The size that you want to reduce.
+	// ----------------------------------------------------------------------------------------
+	HtIterator<T> &operator-=(int size) {
+		this->iterator -= size;
+		return *this;
+	}
 
 public:
 	// ----------------------------------------------------------------------------------------
