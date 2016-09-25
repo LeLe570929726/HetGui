@@ -5,6 +5,8 @@
  // @License: Licensed under GNU General Public License v3.
  // @Craete: 2016/9/3 by LeLe570929726
  // ----------------------------------------------------------------------------------------
+ #ifndef HETGUI_CORE_STL_HTSTRING_H
+ #define HETGUI_CORE_STL_HTSTRING_H
 
 #include "../../Global/HtGlobal/HtGlobal.h"
 #include "../../STL/HtIterator/HtIterator.h"
@@ -13,7 +15,7 @@
 // ----------------------------------------------------------------------------------------
 // @Description: HtString's iterator
 // ----------------------------------------------------------------------------------------
-typedef  HtIterator<std::string::iterator> HtStringIterator;
+using HtStringIterator = HtIterator<std::string::iterator>;
 
 // ----------------------------------------------------------------------------------------
 // @Description: Use this class to store text. It's based on
@@ -46,6 +48,11 @@ public:
 	// @Parameter: other - The other HtString object.
 	// ----------------------------------------------------------------------------------------
 	HtString(HtString &&other);
+	// ----------------------------------------------------------------------------------------
+	// @Description: HtString's constructor.
+	// @Parameter: string - The other std string object.
+	// ----------------------------------------------------------------------------------------
+	HtString(const std::string &string);
 	// ----------------------------------------------------------------------------------------
 	// @Description: HtString's constructor.
   // ----------------------------------------------------------------------------------------
@@ -109,6 +116,11 @@ public:
   // @Parameter: other - The other text or HtString object.
   // ----------------------------------------------------------------------------------------
   HtString &operator=(HtString &&other);
+  // ----------------------------------------------------------------------------------------
+  // @Description: Set the source text to the new text.
+  // @Parameter: string - The other text or HtString object.
+  // ----------------------------------------------------------------------------------------
+  HtString &operator=(const std::string &string);
   // ----------------------------------------------------------------------------------------
   // @Description: Compare this HtString object and input text.
   // @Parameter: text - The text that you want to compare.
@@ -248,31 +260,31 @@ public:
 	// @Description: Assign content to string.
 	// @Parameter: text - Copies text.
 	// ----------------------------------------------------------------------------------------
-HtString &assign(const char *text);
-// ----------------------------------------------------------------------------------------
-// @Description: Assign content to string.
-// @Parameter: text - Copies text.
-// ----------------------------------------------------------------------------------------
-HtString &assign(const HtString &text);
-// ----------------------------------------------------------------------------------------
-// @Description: Assign content to string.
-// @Parameter: text - Copies text.
-//             number - Copies the portion of text.
-// ----------------------------------------------------------------------------------------
-HtString &assign(const char *text, int number);
-// ----------------------------------------------------------------------------------------
-// @Description: Assign content to string.
-// @Parameter: text - Copies text.
-//             position - Copies the start of text.
-//             end - Copies the end of text.
-// ----------------------------------------------------------------------------------------
-HtString &assign(const HtString &text, int position, int end);
-// ----------------------------------------------------------------------------------------
-// @Description: Assign content to string.
-// @Parameter: text - Copies text.
-//             number - The size of text.
-// ----------------------------------------------------------------------------------------
-HtString &assign(char text, int number);
+  HtString &assign(const char *text);
+  // ----------------------------------------------------------------------------------------
+  // @Description: Assign content to string.
+  // @Parameter: text - Copies text.
+  // ----------------------------------------------------------------------------------------
+  HtString &assign(const HtString &text);
+  // ----------------------------------------------------------------------------------------
+  // @Description: Assign content to string.
+  // @Parameter: text - Copies text.
+  //             number - Copies the portion of text.
+  // ----------------------------------------------------------------------------------------
+  HtString &assign(const char *text, int number);
+  // ----------------------------------------------------------------------------------------
+  // @Description: Assign content to string.
+  // @Parameter: text - Copies text.
+  //             position - Copies the start of text.
+  //             end - Copies the end of text.
+  // ----------------------------------------------------------------------------------------
+  HtString &assign(const HtString &text, int position, int end);
+  // ----------------------------------------------------------------------------------------
+  // @Description: Assign content to string.
+  // @Parameter: text - Copies text.
+  //             number - The size of text.
+  // ----------------------------------------------------------------------------------------
+  HtString &assign(char text, int number);
 
 public:
 	// ----------------------------------------------------------------------------------------
@@ -447,3 +459,5 @@ public:
 private:
   std::string string;
 };
+
+#endif								// HETGUI_CORE_STL_HTSTRING_H

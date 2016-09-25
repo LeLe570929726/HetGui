@@ -5,6 +5,8 @@
 // @License: Licensed under GNU General Public License v3.
 // @Craete: 2016/9/3 by LeLe570929726
 // ----------------------------------------------------------------------------------------
+#ifndef HETGUI_CORE_GLOBAL_HTGLOBAL_H
+#define HETGUI_CORE_GLOBAL_HTGLOBAL_H
 
 // Platform flag
 #cmakedefine HETGUI_PLATFORM_WINDOWS
@@ -27,3 +29,5 @@
 #else
   #define HETGUI_CLASS __declspec(dllimport)
 #endif
+
+#endif                // HETGUI_CORE_GLOBAL_HTGLOBAL_H

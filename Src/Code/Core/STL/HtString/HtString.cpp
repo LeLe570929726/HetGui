@@ -48,6 +48,14 @@ HtString::HtString(HtString &&other) :
 }
 
 // ----------------------------------------------------------------------------------------
+// @Description: HtString's constructor.
+// @Parameter: string - The other std string object.
+// ----------------------------------------------------------------------------------------
+HtString::HtString(const std::string &string) :
+	string(string) {
+}
+
+// ----------------------------------------------------------------------------------------
 // @Descriptionion: HtString's constructor.
 // ----------------------------------------------------------------------------------------
 HtString::~HtString() {
@@ -147,6 +155,15 @@ HtString &HtString::operator=(const HtString &other) {
 HtString &HtString::operator=(HtString &&other) {
   this->string = other.string;
   return *this;
+}
+
+// ----------------------------------------------------------------------------------------
+// @Description: Set the source text to the new text.
+// @Parameter: string - The other text or HtString object.
+// ----------------------------------------------------------------------------------------
+HtString &HtString::operator=(const std::string &string) {
+	this->string = string;
+	return *this;
 }
 
 // ----------------------------------------------------------------------------------------
@@ -658,4 +675,14 @@ HtString &HtString::replace(HtStringIterator start, HtStringIterator end, const 
 // ----------------------------------------------------------------------------------------
 void HtString::clear() {
 	this->string.clear();
+}
+
+// ----------------------------------------------------------------------------------------
+// @Description: Get the part of the text.
+// @Parameter: position - The start index of  the text.
+//             end - The end index of the text.
+// ----------------------------------------------------------------------------------------
+HtString HtString::subText(int position, int end) {
+	HtString tempString = this->string.substr(position, end);
+	return tempString;
 }

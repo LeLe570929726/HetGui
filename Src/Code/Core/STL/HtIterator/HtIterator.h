@@ -5,6 +5,8 @@
 // @License: Licensed under GNU General Public License v3.
 // @Craete: 2016/9/4 by LeLe570929726
 // ----------------------------------------------------------------------------------------
+#ifndef HETGUI_CORE_STL_HTITERATOR_H
+#define HETGUI_CORE_STL_HTITERATOR_H
 
 #include "../../Global/HtGlobal/HtGlobal.h"
 #include <string>
@@ -155,3 +157,5 @@ public:
 private:
 	T iterator;
 };
+
+#endif								// HETGUI_CORE_STL_HTITERATOR_H
