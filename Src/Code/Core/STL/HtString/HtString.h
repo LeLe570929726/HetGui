@@ -15,7 +15,7 @@
 // ----------------------------------------------------------------------------------------
 // @Description: HtString's iterator
 // ----------------------------------------------------------------------------------------
-using HtStringIterator = HtIterator<std::string::iterator>;
+using HtStringIterator = HtIterator<std::wstring::iterator>;
 
 // ----------------------------------------------------------------------------------------
 // @Description: Use this class to store text. It's based on
@@ -31,13 +31,13 @@ public:
 	// @Description: HtString's constructor.
 	// @Parameter: text - Initialization text.
 	// ----------------------------------------------------------------------------------------
-	HtString(const char *text);
+	HtString(const wchar_t *text);
 	// ----------------------------------------------------------------------------------------
 	// @Description: HtString's constructor.
 	// @Parameter: size - The size of text that you will add.
 	//             text - The text that you will add.
 	// ----------------------------------------------------------------------------------------
-	HtString(int size, char text);
+	HtString(int size, wchar_t text);
 	// ----------------------------------------------------------------------------------------
 	// @Description: HtString's constructor.
 	// @Parameter: other - The other HtString object.
@@ -52,7 +52,7 @@ public:
 	// @Description: HtString's constructor.
 	// @Parameter: string - The other std string object.
 	// ----------------------------------------------------------------------------------------
-	HtString(const std::string &string);
+	HtString(const std::wstring &string);
 	// ----------------------------------------------------------------------------------------
 	// @Description: HtString's constructor.
   // ----------------------------------------------------------------------------------------
@@ -64,7 +64,7 @@ public:
   // @Parameter: text - Compare with this HtString object and
   //                    the text.
 	// ----------------------------------------------------------------------------------------
-  bool operator!=(const char *text);
+  bool operator!=(const wchar_t *text);
   // ----------------------------------------------------------------------------------------
   // @Description: Compare this HtString object and input text.
   // @Parameter: text - Compare with this HtString object and
@@ -75,7 +75,7 @@ public:
   // @Description: Add the new text into the source text.
   // @Parameter: text - The text that you want to add in.
   // ----------------------------------------------------------------------------------------
-  HtString &operator+=(const char *text);
+  HtString &operator+=(const wchar_t *text);
   // ----------------------------------------------------------------------------------------
   // @Description: Add the new text into the source text.
   // @Parameter: text - The text that you want to add in.
@@ -85,7 +85,7 @@ public:
   // @Description: Compare this HtString object and input text.
   // @Parameter: text - The text that you want to compare.
   // ----------------------------------------------------------------------------------------
-  bool operator<(const char *text);
+  bool operator<(const wchar_t *text);
   // ----------------------------------------------------------------------------------------
   // @Description: Compare this HtString object and input text.
   // @Parameter: text - The text that you want to compare.
@@ -95,7 +95,7 @@ public:
   // @Description: Compare this HtString object and input text.
   // @Parameter: text - The text that you want to compare.
   // ----------------------------------------------------------------------------------------
-  bool operator<=(const char *text);
+  bool operator<=(const wchar_t *text);
   // ----------------------------------------------------------------------------------------
   // @Description: Compare this HtString object and input text.
   // @Parameter: text - The text that you want to compare.
@@ -105,7 +105,7 @@ public:
   // @Description: Set the source text to the new text.
   // @Parameter: other - The other text or HtString object.
   // ----------------------------------------------------------------------------------------
-  HtString &operator=(const char *other);
+  HtString &operator=(const wchar_t *other);
   // ----------------------------------------------------------------------------------------
   // @Description: Set the source text to the new text.
   // @Parameter: other - The other text or HtString object.
@@ -120,12 +120,12 @@ public:
   // @Description: Set the source text to the new text.
   // @Parameter: string - The other text or HtString object.
   // ----------------------------------------------------------------------------------------
-  HtString &operator=(const std::string &string);
+  HtString &operator=(const std::wstring &string);
   // ----------------------------------------------------------------------------------------
   // @Description: Compare this HtString object and input text.
   // @Parameter: text - The text that you want to compare.
   // ----------------------------------------------------------------------------------------
-  bool operator==(const char *text);
+  bool operator==(const wchar_t *text);
   // ----------------------------------------------------------------------------------------
   // @Description: Compare this HtString object and input text.
   // @Parameter: text - The text that you want to compare.
@@ -135,7 +135,7 @@ public:
   // @Description: Compare this HtString object and input text.
   // @Parameter: text - The text that you want to compare.
   // ----------------------------------------------------------------------------------------
-  bool operator>(const char *text);
+  bool operator>(const wchar_t *text);
   // ----------------------------------------------------------------------------------------
   // @Description: Compare this HtString object and input text.
   // @Parameter: text - The text that you want to compare.
@@ -145,7 +145,7 @@ public:
   // @Description: Compare this HtString object and input text.
   // @Parameter: text - The text that you want to compare.
   // ----------------------------------------------------------------------------------------
-  bool operator>=(const char *text);
+  bool operator>=(const wchar_t *text);
   // ----------------------------------------------------------------------------------------
   // @Description: Compare this HtString object and input text.
   // @Parameter: text - The text that you want to compare.
@@ -155,7 +155,7 @@ public:
   // @Description: Get a single text by index.
   // @Parameter: index - The index of the text.
   // ----------------------------------------------------------------------------------------
-  const char operator[](int index);
+  const wchar_t operator[](int index);
 
 public:
   // ----------------------------------------------------------------------------------------
@@ -164,7 +164,7 @@ public:
   // @Parameter: text - The text that you want to add the back
   //                    of the source text.
   // ----------------------------------------------------------------------------------------
-  HtString &append(const char *text);
+  HtString &append(const wchar_t *text);
   // ----------------------------------------------------------------------------------------
   // @Description: Append some text on the back of the source
   //            text.
@@ -179,7 +179,7 @@ public:
   //                    of the source text.
   //             size - The size of the text that you want to add in.
   // ----------------------------------------------------------------------------------------
-  HtString &append(const char *text, int size);
+  HtString &append(const wchar_t *text, int size);
 	// ----------------------------------------------------------------------------------------
 	// @Description: Append some text on the back of the source
 	//            text.
@@ -194,7 +194,7 @@ public:
 	// @Parameter: position - The position that you want to insert.
 	//             text - The text that you want to insert.
 	// ----------------------------------------------------------------------------------------
-	HtString &insert(int position, const char *text);
+	HtString &insert(int position, const wchar_t *text);
 	// ----------------------------------------------------------------------------------------
 	// @Description: Insert some text in the source text.
 	// @Parameter: position - The position that you want to insert.
@@ -207,7 +207,7 @@ public:
 	//             text - The text that you want to insert.
 	//             size - The size of the text.
 	// ----------------------------------------------------------------------------------------
-	HtString &insert(int position, const char *text, int size);
+	HtString &insert(int position, const wchar_t *text, int size);
 	// ----------------------------------------------------------------------------------------
 	// @Description: Insert some text in the source text.
 	// @Parameter: position - The position that you want to insert.
@@ -222,45 +222,45 @@ public:
 	//             size - The number of the text.
 	//             text - The text.
 	// ----------------------------------------------------------------------------------------
-	HtString &insert(int position, int size, char text);
+	HtString &insert(int position, int size, wchar_t text);
 	// ----------------------------------------------------------------------------------------
 	// @Description: Insert some text in the source text.
 	// @Parameter: position - The iteartor that you want to insert.
 	//             size - The number of the text.
 	//             text - The text.
 	// ----------------------------------------------------------------------------------------
-	void insert(HtStringIterator position, int size, char text);
+	void insert(HtStringIterator position, int size, wchar_t text);
 	// ----------------------------------------------------------------------------------------
 	// @Description: Insert some text in the source text.
 	// @Parameter: start - The index that you want to insert.
 	//             text - The text.
 	// ----------------------------------------------------------------------------------------
-	HtStringIterator insert(HtStringIterator start, char text);
+	HtStringIterator insert(HtStringIterator start, wchar_t text);
 	// ----------------------------------------------------------------------------------------
 	// @Description: Request the store memory.
 	// @Parameter: size - The length of the memory.
 	// ----------------------------------------------------------------------------------------
 	void reserve(int size);
 	// ----------------------------------------------------------------------------------------
-	// @Description: Get the back char's reference.
+	// @Description: Get the back wchar_t's reference.
 	// ----------------------------------------------------------------------------------------
-	char &back();
+	wchar_t &back();
 	// ----------------------------------------------------------------------------------------
-	// @Description: Get the front char's reference.
+	// @Description: Get the front wchar_t's reference.
 	// ----------------------------------------------------------------------------------------
-	char &front();
+	wchar_t &front();
   // ----------------------------------------------------------------------------------------
   // @Description: Get a single text by index.
   // @Parameter: index - The index of the text.
   // ----------------------------------------------------------------------------------------
-  const char at(int index);
+  const wchar_t at(int index);
 
 public:
 	// ----------------------------------------------------------------------------------------
 	// @Description: Assign content to string.
 	// @Parameter: text - Copies text.
 	// ----------------------------------------------------------------------------------------
-  HtString &assign(const char *text);
+  HtString &assign(const wchar_t *text);
   // ----------------------------------------------------------------------------------------
   // @Description: Assign content to string.
   // @Parameter: text - Copies text.
@@ -271,7 +271,7 @@ public:
   // @Parameter: text - Copies text.
   //             number - Copies the portion of text.
   // ----------------------------------------------------------------------------------------
-  HtString &assign(const char *text, int number);
+  HtString &assign(const wchar_t *text, int number);
   // ----------------------------------------------------------------------------------------
   // @Description: Assign content to string.
   // @Parameter: text - Copies text.
@@ -284,7 +284,7 @@ public:
   // @Parameter: text - Copies text.
   //             number - The size of text.
   // ----------------------------------------------------------------------------------------
-  HtString &assign(char text, int number);
+  HtString &assign(wchar_t text, int number);
 
 public:
 	// ----------------------------------------------------------------------------------------
@@ -319,7 +319,7 @@ public:
 	// @Parameter: size - The new size.
 	//             text - Use this text to fill the rest part of the string.
 	// ----------------------------------------------------------------------------------------
-	void resize(int size, char text);
+	void resize(int size, wchar_t text);
 	// ----------------------------------------------------------------------------------------
 	// @Description: To determine whether the string is empty.
 	// ----------------------------------------------------------------------------------------
@@ -331,11 +331,11 @@ public:
 	// ----------------------------------------------------------------------------------------
 	// @Description: Get the std string object.
 	// ----------------------------------------------------------------------------------------
-	std::string stdString();
+	std::wstring stdString();
 	// ----------------------------------------------------------------------------------------
 	// @Description: Get the c-style text.
 	// ----------------------------------------------------------------------------------------
-	const char *constData();
+	const wchar_t *constData();
 
 public:
 	// ----------------------------------------------------------------------------------------
@@ -343,7 +343,7 @@ public:
 	// @Parameter: text - The text that you will push it behind
 	//                    the source string.
 	// ----------------------------------------------------------------------------------------
-	void pushBack(const char *text);
+	void pushBack(const wchar_t *text);
 	// ----------------------------------------------------------------------------------------
 	// @Description: Push the text behind the source string.
 	// @Parameter: text - The text that you will push it behind
@@ -355,18 +355,18 @@ public:
 	// @Parameter: position - The start index.
 	//             end - The end index.
 	// ----------------------------------------------------------------------------------------
-	HtString &remove(int position, int end);
+	HtString &erase(int position, int end);
 	// ----------------------------------------------------------------------------------------
 	// @Description: Remove a part of text.
 	// @Parameter: position - The text's iterator.
 	// ----------------------------------------------------------------------------------------
-	HtStringIterator remove(HtStringIterator position);
+	HtStringIterator erase(HtStringIterator position);
 	// ----------------------------------------------------------------------------------------
 	// @Description: Remove a part of text.
 	// @Parameter: start - The start text's iterator.
 	//             end - The end text's iterator.
 	// ----------------------------------------------------------------------------------------
-	HtStringIterator remove(HtStringIterator start, HtStringIterator end);
+	HtStringIterator erase(HtStringIterator start, HtStringIterator end);
 	// ----------------------------------------------------------------------------------------
 	// @Description: Replace a part of text.
 	// @Parameter: position - The start text's index.
@@ -374,7 +374,7 @@ public:
 	//                      replace.
 	//             text - The text you want to add in.
 	// ----------------------------------------------------------------------------------------
-	HtString &replace(int position, int number, const char *text);
+	HtString &replace(int position, int number, const wchar_t *text);
 	// ----------------------------------------------------------------------------------------
 	// @Description: Replace a part of text.
 	// @Parameter: position - The start text's index.
@@ -392,7 +392,7 @@ public:
 	//             numberAdd - The number of the add text that you
 	//                      want to add in.
 	// ----------------------------------------------------------------------------------------
-	HtString &replace(int positionSource, int numberSource, const char *text, int numberAdd);
+	HtString &replace(int positionSource, int numberSource, const wchar_t *text, int numberAdd);
 	// ----------------------------------------------------------------------------------------
 	// @Description: Replace a part of text.
 	// @Parameter: positionSource - The source text's start index.
@@ -412,14 +412,14 @@ public:
 	//             count - The number of the text's size.
 	//             text - The text you want to add in.
 	// ----------------------------------------------------------------------------------------
-	HtString &replace(int position, int number, int count, char text);
+	HtString &replace(int position, int number, int count, wchar_t text);
 	// ----------------------------------------------------------------------------------------
 	// @Description: Replace a part of text.
 	// @Parameter: start - The start iterator.
 	//             end - The end iterator.
 	//             text - The text you want to add in.
 	// ----------------------------------------------------------------------------------------
-	HtString &replace(HtStringIterator start, HtStringIterator end, const char *text);
+	HtString &replace(HtStringIterator start, HtStringIterator end, const wchar_t *text);
 	// ----------------------------------------------------------------------------------------
 	// @Description: Replace a part of text.
 	// @Parameter: start - The start iterator.
@@ -442,7 +442,7 @@ public:
 	//             text - The text that you want to add in.
 	//             count - The size of the add's text.
 	// ----------------------------------------------------------------------------------------
-	HtString &replace(HtStringIterator start, HtStringIterator end, const char *text, int count);
+	HtString &replace(HtStringIterator start, HtStringIterator end, const wchar_t *text, int count);
 	// ----------------------------------------------------------------------------------------
 	// @Description: Get the part of the text.
 	// @Parameter: position - The start index of  the text.
@@ -457,7 +457,7 @@ public:
 	void clear();
 
 private:
-  std::string string;
+	std::wstring string;
 };
 
 #endif								// HETGUI_CORE_STL_HTSTRING_H

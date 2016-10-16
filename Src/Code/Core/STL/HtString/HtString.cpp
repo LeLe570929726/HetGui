@@ -18,7 +18,7 @@ HtString::HtString() :
 // ----------------------------------------------------------------------------------------
 // @Descriptionion: HtString's constructor.
 // ----------------------------------------------------------------------------------------
-HtString::HtString(const char *text) :
+HtString::HtString(const wchar_t *text) :
 	string(text) {
 }
 
@@ -27,7 +27,7 @@ HtString::HtString(const char *text) :
 // @Parameter: size - The size of text that you will add.
 //             text - The text that you will add.
 // ----------------------------------------------------------------------------------------
-HtString::HtString(int size, char text) :
+HtString::HtString(int size, wchar_t text) :
   string(size, text) {
 }
 
@@ -51,7 +51,7 @@ HtString::HtString(HtString &&other) :
 // @Description: HtString's constructor.
 // @Parameter: string - The other std string object.
 // ----------------------------------------------------------------------------------------
-HtString::HtString(const std::string &string) :
+HtString::HtString(const std::wstring &string) :
 	string(string) {
 }
 
@@ -67,7 +67,7 @@ HtString::~HtString() {
 // @Parameter: text - Compare with this HtString object and
 //                    the text.
 // ----------------------------------------------------------------------------------------
-bool HtString::operator!=(const char *text) {
+bool HtString::operator!=(const wchar_t *text) {
 	return this->string != text;
 }
 
@@ -84,7 +84,7 @@ bool HtString::operator!=(const HtString &text) {
 // @Descriptionion: Add the new text into the source text.
 // @Parameter: text - The text that you want to add in.
 // ----------------------------------------------------------------------------------------
-HtString &HtString::operator+=(const char *text) {
+HtString &HtString::operator+=(const wchar_t *text) {
   this->string += text;
   return *this;
 }
@@ -102,7 +102,7 @@ HtString &HtString::operator+=(const HtString &text) {
 // @Descriptionion: Compare this HtString object and input text.
 // @Parameter: text - The text that you want to compare.
 // ----------------------------------------------------------------------------------------
-bool HtString::operator<(const char *text) {
+bool HtString::operator<(const wchar_t *text) {
   return this->string < text;
 }
 
@@ -118,7 +118,7 @@ bool HtString::operator<(const HtString &text) {
 // @Descriptionion: Compare this HtString object and input text.
 // @Parameter: text - The text that you want to compare.
 // ----------------------------------------------------------------------------------------
-bool HtString::operator<=(const char *text) {
+bool HtString::operator<=(const wchar_t *text) {
   return this->string <= text;
 }
 
@@ -134,7 +134,7 @@ bool HtString::operator<=(const HtString &text) {
 // @Descriptionion: Set the source text to the new text.
 // @Parameter: other - The other text or HtString object.
 // ----------------------------------------------------------------------------------------
-HtString &HtString::operator=(const char *other) {
+HtString &HtString::operator=(const wchar_t *other) {
   this->string = other;
   return *this;
 }
@@ -161,7 +161,7 @@ HtString &HtString::operator=(HtString &&other) {
 // @Description: Set the source text to the new text.
 // @Parameter: string - The other text or HtString object.
 // ----------------------------------------------------------------------------------------
-HtString &HtString::operator=(const std::string &string) {
+HtString &HtString::operator=(const std::wstring &string) {
 	this->string = string;
 	return *this;
 }
@@ -170,7 +170,7 @@ HtString &HtString::operator=(const std::string &string) {
 // @Descriptionion: Compare this HtString object and input text.
 // @Parameter: text - The text that you want to compare.
 // ----------------------------------------------------------------------------------------
-bool HtString::operator==(const char *text) {
+bool HtString::operator==(const wchar_t *text) {
   return this->string == text;
 }
 
@@ -186,7 +186,7 @@ bool HtString::operator==(const HtString &text) {
 // @Descriptionion: Compare this HtString object and input text.
 // @Parameter: text - The text that you want to compare.
 // ----------------------------------------------------------------------------------------
-bool HtString::operator>(const char *text) {
+bool HtString::operator>(const wchar_t *text) {
   return this->string > text;
 }
 
@@ -202,7 +202,7 @@ bool HtString::operator>(const HtString &text) {
 // @Descriptionion: Compare this HtString object and input text.
 // @Parameter: text - The text that you want to compare.
 // ----------------------------------------------------------------------------------------
-bool HtString::operator>=(const char *text) {
+bool HtString::operator>=(const wchar_t *text) {
   return this->string >= text;
 }
 
@@ -218,7 +218,7 @@ bool HtString::operator>=(const HtString &text) {
 // @Descriptionion: Get a single text by index.
 // @Parameter: index - The index of the text.
 // ----------------------------------------------------------------------------------------
-const char HtString::operator[](int index) {
+const wchar_t HtString::operator[](int index) {
   return this->string[index];
 }
 
@@ -228,7 +228,7 @@ const char HtString::operator[](int index) {
 // @Parameter: text - The text that you want to add the back
 //                    of the source text.
 // ----------------------------------------------------------------------------------------
-HtString &HtString::append(const char *text) {
+HtString &HtString::append(const wchar_t *text) {
   this->string.append(text);
   return *this;
 }
@@ -251,7 +251,7 @@ HtString &HtString::append(const HtString &text) {
 //                    of the source text.
 //             size - The size of the text that you want to add in.
 // ----------------------------------------------------------------------------------------
-HtString &HtString::append(const char *text, int size) {
+HtString &HtString::append(const wchar_t *text, int size) {
 	this->string.append(text, size);
 	return *this;
 }
@@ -275,7 +275,7 @@ HtString &HtString::append(const HtString &text, int position, int number) {
 // @Parameter: position - The position that you want to insert.
 //             text - The text that you want to insert.
 // ----------------------------------------------------------------------------------------
-HtString &HtString::insert(int position, const char *text) {
+HtString &HtString::insert(int position, const wchar_t *text) {
 	this->string.insert(position, text);
 	return *this;
 }
@@ -298,7 +298,7 @@ HtString &HtString::insert(int position, const HtString &text) {
 //             text - The text that you want to insert.
 //             size - The size of the text.
 // ----------------------------------------------------------------------------------------
-HtString &HtString::insert(int position, const char *text, int size) {
+HtString &HtString::insert(int position, const wchar_t *text, int size) {
 	this->string.insert(position, text, size);
 	return *this;
 }
@@ -323,7 +323,7 @@ HtString &HtString::insert(int position, const HtString &text, int start, int en
 //             size - The number of the text.
 //             text - The text.
 // ----------------------------------------------------------------------------------------
-HtString &HtString::insert(int position, int size, char text) {
+HtString &HtString::insert(int position, int size, wchar_t text) {
 	this->string.insert(position, size, text);
 	return *this;
 }
@@ -335,7 +335,7 @@ HtString &HtString::insert(int position, int size, char text) {
 //             size - The number of the text.
 //             text - The text.
 // ----------------------------------------------------------------------------------------
-void HtString::insert(HtStringIterator position, int size, char text) {
+void HtString::insert(HtStringIterator position, int size, wchar_t text) {
 	this->string.insert(position.stdIterator(), size, text);
 }
 
@@ -345,7 +345,7 @@ void HtString::insert(HtStringIterator position, int size, char text) {
 // @Parameter: position - The index that you want to insert.
 //             text - The text.
 // ----------------------------------------------------------------------------------------
-HtStringIterator HtString::insert(HtStringIterator position, char text) {
+HtStringIterator HtString::insert(HtStringIterator position, wchar_t text) {
 	HtStringIterator tempIterator = this->string.insert(position.stdIterator(), text);
 	return tempIterator;
 }
@@ -359,16 +359,16 @@ void HtString::reserve(int size) {
 }
 
 // ----------------------------------------------------------------------------------------
-// @Description: Get the back char's reference.
+// @Description: Get the back wchar_t's reference.
 // ----------------------------------------------------------------------------------------
-char &HtString::back() {
+wchar_t &HtString::back() {
 	return this->string.back();
 }
 
 // ----------------------------------------------------------------------------------------
-// @Description: Get the front char's reference.
+// @Description: Get the front wchar_t's reference.
 // ----------------------------------------------------------------------------------------
-char &HtString::front() {
+wchar_t &HtString::front() {
 	return this->string.front();
 }
 
@@ -376,7 +376,7 @@ char &HtString::front() {
 // @Descriptionion: Get a single text by index.
 // @Parameter: index - The index of the text.
 // ----------------------------------------------------------------------------------------
-const char HtString::at(int index) {
+const wchar_t HtString::at(int index) {
   return this->string[index];
 }
 
@@ -384,7 +384,7 @@ const char HtString::at(int index) {
 // @Description: Assign content to string.
 // @Parameter: text - Copies text.
 // ----------------------------------------------------------------------------------------
-HtString &HtString::assign(const char *text) {
+HtString &HtString::assign(const wchar_t *text) {
 	this->string.assign(text);
 	return *this;
 }
@@ -403,7 +403,7 @@ HtString &HtString::assign(const HtString &text) {
 // @Parameter: text - Copies text.
 //             number - Copies the portion of text.
 // ----------------------------------------------------------------------------------------
-HtString &HtString::assign(const char *text, int number) {
+HtString &HtString::assign(const wchar_t *text, int number) {
 	this->string.assign(text, number);
 	return *this;
 }
@@ -424,7 +424,7 @@ HtString &HtString::assign(const HtString &text, int position, int end) {
 // @Parameter: text - Copies text.
 //             number - The size of text.
 // ----------------------------------------------------------------------------------------
-HtString &HtString::assign(char text, int number) {
+HtString &HtString::assign(wchar_t text, int number) {
 	this->string.assign(number, text);
 	return *this;
 }
@@ -471,7 +471,7 @@ int HtString::maxSize() {
 // @Parameter: size - The new size.
 // ----------------------------------------------------------------------------------------
 void HtString::resize(int size) {
-	this->resize(size);
+	this->string.resize(size);
 }
 
 // ----------------------------------------------------------------------------------------
@@ -479,8 +479,8 @@ void HtString::resize(int size) {
 // @Parameter: size - The new size.
 //             text - Use this text to fill the rest part of the string.
 // ----------------------------------------------------------------------------------------
-void HtString::resize(int size, char text) {
-	this->resize(size, text);
+void HtString::resize(int size, wchar_t text) {
+	this->string.resize(size, text);
 }
 
 // ----------------------------------------------------------------------------------------
@@ -500,14 +500,14 @@ int HtString::capacity() {
 // ----------------------------------------------------------------------------------------
 // @Descriptionion: Get the std string object.
 // ----------------------------------------------------------------------------------------
-std::string HtString::stdString() {
+std::wstring HtString::stdString() {
 	return this->string;
 }
 
 // ----------------------------------------------------------------------------------------
 // @Descriptionion: Get the c-style text.
 // ----------------------------------------------------------------------------------------
-const char *HtString::constData() {
+const wchar_t *HtString::constData() {
 	return this->string.c_str();
 }
 
@@ -516,7 +516,7 @@ const char *HtString::constData() {
 // @Parameter: text - The text that you will push it behind
 //                    the source string.
 // ----------------------------------------------------------------------------------------
-void HtString::pushBack(const char *text) {
+void HtString::pushBack(const wchar_t *text) {
 	this->string += text;
 }
 
@@ -534,7 +534,7 @@ void HtString::pushBack(const HtString &text) {
 // @Parameter: position - The start index.
 //             end - The end index.
 // ----------------------------------------------------------------------------------------
-HtString &HtString::remove(int position, int end) {
+HtString &HtString::erase(int position, int end) {
 	this->string.erase(position, end);
 	return *this;
 }
@@ -543,8 +543,8 @@ HtString &HtString::remove(int position, int end) {
 // @Descriptionion: Remove a part of text.
 // @Parameter: position - The text's iterator.
 // ----------------------------------------------------------------------------------------
-HtStringIterator HtString::remove(HtStringIterator position) {
-	std::string::iterator tempIterator = this->string.erase(position.stdIterator());
+HtStringIterator HtString::erase(HtStringIterator position) {
+	std::wstring::iterator tempIterator = this->string.erase(position.stdIterator());
 	return tempIterator;
 }
 
@@ -553,8 +553,8 @@ HtStringIterator HtString::remove(HtStringIterator position) {
 // @Parameter: start - The start text's iterator.
 //             end - The end text's iterator.
 // ----------------------------------------------------------------------------------------
-HtStringIterator HtString::remove(HtStringIterator start, HtStringIterator end) {
-	std::string::iterator tempIterator = this->string.erase(start.stdIterator(), end.stdIterator());
+HtStringIterator HtString::erase(HtStringIterator start, HtStringIterator end) {
+	std::wstring::iterator tempIterator = this->string.erase(start.stdIterator(), end.stdIterator());
 	return tempIterator;
 }
 
@@ -565,7 +565,7 @@ HtStringIterator HtString::remove(HtStringIterator start, HtStringIterator end) 
 //                      replace.
 //             text - The text you want to add in.
 // ----------------------------------------------------------------------------------------
-HtString &HtString::replace(int position, int number, const char *text) {
+HtString &HtString::replace(int position, int number, const wchar_t *text) {
 	this->string.replace(position, number, text);
 	return *this;
 }
@@ -591,7 +591,7 @@ HtString &HtString::replace(int position, int number, const HtString &text) {
 //             numberAdd - The number of the add text that you
 //                      want to add in.
 // ----------------------------------------------------------------------------------------
-HtString &HtString::replace(int positionSource, int numberSource, const char *text, int numberAdd) {
+HtString &HtString::replace(int positionSource, int numberSource, const wchar_t *text, int numberAdd) {
 	this->string.replace(positionSource, numberSource, text, numberAdd);
 	return *this;
 }
@@ -619,7 +619,7 @@ HtString &HtString::replace(int positionSource, int numberSource, const HtString
 //             count - The number of the text's size.
 //             text - The text you want to add in.
 // ----------------------------------------------------------------------------------------
-HtString &HtString::replace(int position, int number, int count, char text) {
+HtString &HtString::replace(int position, int number, int count, wchar_t text) {
 	this->string.replace(position, number, count, text);
 	return *this;
 }
@@ -630,7 +630,7 @@ HtString &HtString::replace(int position, int number, int count, char text) {
 //             end - The end iterator.
 //             text - The text you want to add in.
 // ----------------------------------------------------------------------------------------
-HtString &HtString::replace(HtStringIterator start, HtStringIterator end, const char *text) {
+HtString &HtString::replace(HtStringIterator start, HtStringIterator end, const wchar_t *text) {
 	this->string.replace(start.stdIterator(), end.stdIterator(), text);
 	return *this;
 }
@@ -665,7 +665,7 @@ HtString &HtString::replace(HtStringIterator startSource, HtStringIterator endSo
 //             text - The text that you want to add in.
 //             count - The size of the add's text.
 // ----------------------------------------------------------------------------------------
-HtString &HtString::replace(HtStringIterator start, HtStringIterator end, const char *text, int count) {
+HtString &HtString::replace(HtStringIterator start, HtStringIterator end, const wchar_t *text, int count) {
 	this->string.replace(start.stdIterator(), end.stdIterator(), text, count);
 	return *this;
 }
